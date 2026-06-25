@@ -105,11 +105,8 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-brand-100 flex flex-col md:flex-row justify-between items-center text-sm font-medium text-brand-400">
-        <p>&copy; {new Date().getFullYear()} MinhQuang28. All rights reserved.</p>
-        <p className="mt-4 md:mt-0 flex items-center gap-2">
-          Designed with <span className="text-red-500 animate-pulse">❤️</span> in Vietnam
-        </p>
+      <div className="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-brand-100 flex flex-col md:flex-row justify-center items-center text-sm font-medium text-brand-400 text-center">
+        <p>&copy; {new Date().getFullYear()} MinhQuang28. All rights reserved. | Coded & Optimized by Le Minh Quang.</p>
       </div>
     </footer>
   );
