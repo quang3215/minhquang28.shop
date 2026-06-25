@@ -27,7 +27,7 @@ import AdminHomeSettings from './pages/admin/AdminHomeSettings';
 function App() {
   return (
     <CartProvider>
-      <BrowserRouter>
+      <BrowserRouter basename="/minhquang28.shop/">
         <Routes>
           {/* Public Routes */}
           <Route element={<MainLayout />}>
