@@ -27,8 +27,7 @@ const Header = () => {
   }, []);
 
   const toggleLanguage = () => {
-    const newLang = i18n.language === 'vi' ? 'en' : 'vi';
-    i18n.changeLanguage(newLang);
+    // Disabled as per user request
   };
 
   const linkClass = ({ isActive }: { isActive: boolean }) => 
@@ -70,13 +69,6 @@ const Header = () => {
                   </span>
                 )}
               </Link>
-              
-              <button 
-                onClick={toggleLanguage}
-                className="ml-2 px-2 py-1 text-xs font-bold border border-brand-900 rounded hover:bg-brand-50 transition-colors"
-              >
-                {i18n.language === 'vi' ? 'EN' : 'VN'}
-              </button>
             </div>
 
             <Link to="/contact" className="btn-primary py-2 px-4 text-sm">
@@ -117,13 +109,6 @@ const Header = () => {
               </Link>
               
               <div className="flex items-center gap-4">
-                <button 
-                  onClick={toggleLanguage}
-                  className="px-3 py-1.5 text-xs font-bold border-2 border-brand-900 rounded-lg hover:bg-brand-50 transition-colors"
-                >
-                  {i18n.language === 'vi' ? 'EN' : 'VN'}
-                </button>
-                
                 <Link to="/cart" onClick={() => setIsMobileMenuOpen(false)} className="relative p-2 text-brand-950 bg-brand-50 rounded-full hover:bg-brand-100 transition-colors">
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
                   {cart.length > 0 && (
