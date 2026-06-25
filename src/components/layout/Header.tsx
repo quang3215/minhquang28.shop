@@ -42,7 +42,7 @@ const Header = () => {
             {siteSettings?.logoUrl ? (
               <img src={siteSettings.logoUrl} alt={siteSettings?.siteName || 'Logo'} className="h-8 md:h-10 object-contain group-hover:scale-105 transition-transform" />
             ) : (
-              <span className="text-xl md:text-2xl font-black tracking-tight text-brand-950 group-hover:text-sky-600 transition-colors">
+              <span className="text-xl md:text-2xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-sky-600 to-lime-500 group-hover:from-sky-500 group-hover:to-lime-400 transition-all duration-300">
                 {siteSettings?.siteName || 'MinhQuang28'}
               </span>
             )}
