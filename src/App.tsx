@@ -4,6 +4,7 @@ import AdminLayout from './components/layout/AdminLayout';
 import { ProtectedRoute } from './components/common/ProtectedRoute';
 import { CartProvider } from './components/context/CartContext';
 import { ToastContainer } from './components/common/Toast';
+import { ScrollToTop } from './components/common/ScrollToTop';
 
 import Home from './pages/Home';
 import Projects from './pages/Projects';
@@ -28,6 +29,7 @@ function App() {
   return (
     <CartProvider>
       <BrowserRouter basename="/minhquang28.shop/">
+        <ScrollToTop />
         <Routes>
           {/* Public Routes */}
           <Route element={<MainLayout />}>
