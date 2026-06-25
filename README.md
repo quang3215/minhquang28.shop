@@ -1,86 +1,85 @@
-# 🚀 MinhQuang28 - Premium Digital Agency & Source Code Marketplace
+# 🚀 Premium E-Commerce & Agency Framework
 
-![MinhQuang28 Hero Banner](https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2000&auto=format&fit=crop)
+![Hero Banner](https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2000&auto=format&fit=crop)
 
-MinhQuang28 là hệ thống Website Bán Hàng Cao Cấp (High-end Source Code) kết hợp giới thiệu Dịch Vụ Quảng Cáo (Performance Marketing). Dự án được thiết kế theo chuẩn UI/UX hiện đại (Glassmorphism, Gradient Glow, Anti-slop), tập trung tuyệt đối vào tỷ lệ chuyển đổi (Conversion Rate) và trải nghiệm người dùng siêu mượt mà.
+A high-end, conversion-optimized E-Commerce and Digital Agency platform. Built with modern web standards to deliver maximum performance, seamless user experience, and a robust admin portal. Designed specifically to scale operations and maximize ROI.
 
-## 🌟 Tính Năng Nổi Bật
+## 🌟 Key Features
 
-### Dành cho Khách Hàng (Client-side)
-- **Giao diện Sang Trọng & Độc Quyền:** Thiết kế Light Theme kết hợp Gradient tinh tế, hiệu ứng trượt màn hình mượt mà (Scroll Reveal).
-- **Trải Nghiệm Mua Sắm (E-commerce):** Thêm vào giỏ hàng, Thanh toán, và Tra cứu trạng thái đơn hàng thời gian thực.
-- **Đa Ngôn Ngữ (i18n):** Tích hợp tính năng chuyển đổi ngôn ngữ Việt - Anh linh hoạt.
-- **Tốc Độ Tải Trang Siêu Tốc:** Điểm Lighthouse tuyệt đối nhờ kiến trúc React + Vite.
+### Client-Side (Storefront)
+- **Premium Aesthetics:** Modern Light Theme, Glassmorphism elements, refined Gradient Glows, and smooth Scroll Reveal animations.
+- **E-Commerce Ready:** Complete shopping cart functionality, secure checkout flows, and real-time order tracking.
+- **Localization (i18n):** Built-in multi-language support (English / Vietnamese).
+- **Extreme Performance:** Near-perfect Lighthouse scores ensuring zero-latency page loads and maximum SEO benefits.
 
-### Dành cho Quản Trị Viên (Admin Portal)
-- **Quản Trị Giao Diện & Bài Viết:** Thêm, sửa, xóa các sản phẩm Source Code và bài Blog một cách trực quan.
-- **Quản Lý Đơn Hàng:** Thay đổi trạng thái đơn hàng (Chờ xử lý, Đang xử lý, Đã bàn giao) chỉ bằng một cú nhấp chuột.
-- **Hệ Thống Thông Báo (Custom Toast):** Thông báo thao tác thành công/thất bại dạng trượt mượt mà, thay thế hoàn toàn `window.alert`.
-- **Cài Đặt Cấu Hình Động (Dynamic Settings):** Thay đổi nội dung hiển thị trang chủ, tên thương hiệu, Logo, và các thông tin liên hệ mà không cần chạm vào code.
-- **Quản Lý Data:** Hệ thống Seed data thông minh, kết nối trực tiếp với Backend (Firebase Firestore).
+### Admin Portal (Dashboard)
+- **Content Management:** Intuitive CRUD interfaces for managing Projects/Templates and Blog Posts.
+- **Order Management:** Real-time order status updates (Pending, Processing, Completed, Cancelled).
+- **Dynamic Configuration:** Adjust homepage Hero texts, Marquee keywords, statistics, Site Name, and Logo without modifying code.
+- **Modern UI Components:** Smooth, responsive, and beautifully animated modals, toast notifications, and interactive elements.
+- **Firebase Integration:** Real-time database syncing and smart data seeding capabilities.
 
-## 🛠 Nền Tảng Công Nghệ (Tech Stack)
+## 🛠 Tech Stack
 
-Dự án được xây dựng hoàn toàn trên hệ sinh thái Frontend hiện đại:
+Built on a bleeding-edge frontend ecosystem:
 
-- **Framework:** [React 19](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
-- **Bundler:** [Vite](https://vitejs.dev/) (Tối ưu tốc độ Build cực nhanh)
-- **Styling:** [Tailwind CSS v3](https://tailwindcss.com/) (Tùy biến cao, tích hợp custom animations)
-- **Backend & Database:** [Firebase Firestore](https://firebase.google.com/) (Real-time NoSQL)
+- **Core Framework:** [React 19](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
+- **Bundler:** [Vite](https://vitejs.dev/) (Lightning-fast HMR and optimized builds)
+- **Styling:** [Tailwind CSS v3](https://tailwindcss.com/) (Utility-first, highly customizable)
+- **Backend Services:** [Firebase Firestore](https://firebase.google.com/) (Real-time NoSQL Database)
 - **Routing:** [React Router v7](https://reactrouter.com/)
 - **Localization:** [react-i18next](https://react.i18next.com/)
 
-## 🚀 Hướng Dẫn Cài Đặt (Quick Start)
+## 🚀 Quick Start Guide
 
-### 1. Yêu cầu hệ thống
-- **Node.js**: Phiên bản >= 18.x
-- **NPM** hoặc **Yarn**
+### 1. Prerequisites
+- **Node.js**: Version 18.x or higher
+- **NPM** or **Yarn**
 
-### 2. Cài đặt mã nguồn
+### 2. Installation
 
 ```bash
-# Clone dự án từ GitHub
-git clone https://github.com/quang3215/minhquang28.shop.git
+# Clone the repository
+git clone <your-repository-url>
 
-# Di chuyển vào thư mục dự án
-cd minhquang28.shop
+# Navigate into the project directory
+cd <project-directory>
 
-# Cài đặt toàn bộ thư viện phụ thuộc
+# Install all dependencies
 npm install
-# hoặc nếu dùng yarn
+# or
 yarn install
 ```
 
-### 3. Cấu hình Môi trường Firebase
-Dự án sử dụng Firebase làm Backend. Tại thư mục `src/config/firebase.ts`, vui lòng đảm bảo bạn đã cung cấp đúng các thông số API Key từ dự án Firebase của bạn.
+### 3. Environment Setup
+Configure your Firebase credentials. Open `src/config/firebase.ts` and replace the placeholder API keys and configuration objects with your own Firebase project credentials.
 
-### 4. Khởi động môi trường Phát triển (Development)
+### 4. Development Server
 
 ```bash
-# Chạy máy chủ phát triển cục bộ
+# Start the local development server
 npm run dev
-# hoặc
+# or
 yarn dev
 ```
-Truy cập: `http://localhost:5173`
+Access the application at: `http://localhost:5173`
 
-### 5. Khởi động môi trường Quản trị (Admin)
-Truy cập đường dẫn `/login`. Đăng nhập bằng tài khoản Quản trị viên (đã được cấp quyền Admin trên Firebase Auth).
+### 5. Admin Access
+Navigate to `/login`. Authenticate using an account that has been granted Administrative privileges in your Firebase Authentication setup.
 
-## 📦 Đóng gói & Triển khai (Build & Deploy)
+## 📦 Build & Deployment
 
-Để đưa website lên môi trường Production (như Vercel, Netlify, hoặc Firebase Hosting):
+To prepare the application for a production environment (e.g., Vercel, Netlify, or Firebase Hosting):
 
 ```bash
-# Xây dựng bản phân phối
+# Generate a production build
 npm run build
-# hoặc
+# or
 yarn build
 ```
 
-Sau khi quá trình kết thúc, thư mục `dist/` sẽ được tạo ra chứa mã nguồn tĩnh đã được tối ưu hóa tối đa, sẵn sàng để Upload lên máy chủ.
+Once the build process completes, the `dist/` directory will contain the highly optimized static files ready for deployment.
 
 ---
 
-**Bản quyền © 2026 bởi MinhQuang28.** 
-*Mọi hình thức sao chép giao diện hoặc sử dụng lại mã nguồn mà không có sự cho phép đều bị nghiêm cấm.*
+**Note:** This is a proprietary source code framework. Please refer to your licensing agreement before distributing or modifying the core architecture for external commercial use.
