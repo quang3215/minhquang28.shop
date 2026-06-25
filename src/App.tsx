@@ -17,6 +17,7 @@ import BlogList from './pages/BlogList';
 import BlogDetail from './pages/BlogDetail';
 import Contact from './pages/Contact';
 import Login from './pages/Login';
+import NotFound from './pages/NotFound';
 
 import AdminDashboard from './pages/admin/Dashboard';
 import ProjectsManager from './pages/admin/ProjectsManager';
@@ -44,6 +45,8 @@ function App() {
             <Route path="blog" element={<BlogList />} />
             <Route path="blog/:slug" element={<BlogDetail />} />
             <Route path="contact" element={<Contact />} />
+            {/* Catch-all 404 Route */}
+            <Route path="*" element={<NotFound />} />
           </Route>
 
           {/* Admin Auth Route */}
