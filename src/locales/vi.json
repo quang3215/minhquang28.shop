@@ -1,0 +1,50 @@
+{
+  "translation": {
+    "header": {
+      "home": "Trang Chủ",
+      "templates": "Kho Giao Diện",
+      "services": "Dịch Vụ Ads",
+      "blog": "Bài Viết",
+      "contact": "Liên Hệ Hợp Tác"
+    },
+    "cart": {
+      "empty": "Giỏ hàng của bạn đang trống",
+      "checkout": "Thanh Toán",
+      "add_to_cart": "Thêm vào Giỏ hàng",
+      "buy_now": "Mua Ngay"
+    },
+    "projects": {
+      "title": "Kho Giao Diện Cao Cấp",
+      "subtitle": "Tối ưu chuyển đổi. Thiết kế sắc nét. Tốc độ vượt trội.",
+      "all": "Tất cả",
+      "live_demo": "Xem Demo",
+      "view_details": "Xem chi tiết",
+      "loading": "Đang tải dữ liệu...",
+      "page": "Trang"
+    },
+    "project_detail": {
+      "not_found": "Không tìm thấy sản phẩm",
+      "back_to_list": "Quay lại danh sách",
+      "details": "Thông tin chi tiết",
+      "seo_ready": "Source code chuẩn SEO",
+      "seo_desc": "Tối ưu Lighthouse > 90",
+      "free_setup": "Hỗ trợ cài đặt",
+      "free_setup_desc": "Setup lên hosting miễn phí"
+    },
+    "track_order": {
+      "title": "Tra Cứu Đơn Hàng",
+      "subtitle": "Nhập số điện thoại Zalo bạn đã dùng để đặt hàng để kiểm tra tiến độ giao Source Code mới nhất.",
+      "search_placeholder": "Nhập số điện thoại...",
+      "search_button": "Tra Cứu",
+      "searching": "Đang tìm...",
+      "not_found_title": "Không tìm thấy đơn hàng",
+      "not_found_desc": "Chúng tôi không tìm thấy đơn hàng nào liên kết với số điện thoại: ",
+      "found": "Tìm thấy {{count}} đơn hàng:",
+      "status_label": "Trạng thái xử lý",
+      "status_pending": "Chờ xử lý",
+      "status_processing": "Đang xử lý",
+      "status_completed": "Đã bàn giao",
+      "status_cancelled": "Đã hủy"
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "translation": {
+    "header": {
+      "home": "Home",
+      "templates": "Templates",
+      "services": "Ads Services",
+      "blog": "Blog",
+      "contact": "Work with us"
+    },
+    "cart": {
+      "empty": "Your cart is empty",
+      "checkout": "Checkout",
+      "add_to_cart": "Add to Cart",
+      "buy_now": "Buy Now"
+    },
+    "projects": {
+      "title": "Premium Web Templates",
+      "subtitle": "High-converting. Pixel-perfect. Lightning fast.",
+      "all": "All",
+      "live_demo": "Live Demo",
+      "view_details": "View Details",
+      "loading": "Loading templates...",
+      "page": "Page"
+    },
+    "project_detail": {
+      "not_found": "Product Not Found",
+      "back_to_list": "Back to templates",
+      "details": "Product Details",
+      "seo_ready": "SEO Optimized Source",
+      "seo_desc": "Lighthouse Score > 90",
+      "free_setup": "Free Installation",
+      "free_setup_desc": "Free setup on your hosting"
+    },
+    "track_order": {
+      "title": "Track Order",
+      "subtitle": "Enter the Zalo phone number you used to place your order to check the latest source code delivery status.",
+      "search_placeholder": "Enter phone number...",
+      "search_button": "Track Order",
+      "searching": "Searching...",
+      "not_found_title": "Order Not Found",
+      "not_found_desc": "We could not find any order associated with the phone number: ",
+      "found": "Found {{count}} orders:",
+      "status_label": "Processing Status",
+      "status_pending": "Pending",
+      "status_processing": "Processing",
+      "status_completed": "Delivered",
+      "status_cancelled": "Cancelled"
+    }
+  }
+}
