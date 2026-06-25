@@ -11,6 +11,7 @@ interface Post {
   summary: string;
   content: string;
   tags: string[] | string;
+  coverImage?: string;
 }
 
 const PostsManager = () => {
@@ -19,7 +20,7 @@ const PostsManager = () => {
   const [showForm, setShowForm] = useState(false);
   const [editingId, setEditingId] = useState<string | null>(null);
   const [itemToDelete, setItemToDelete] = useState<string | null>(null);
-  const [formData, setFormData] = useState<Post>({ title: '', slug: '', summary: '', content: '', tags: '' });
+  const [formData, setFormData] = useState<Post>({ title: '', slug: '', summary: '', content: '', tags: '', coverImage: '' });
 
   useEffect(() => {
     const q = query(collection(db, 'posts'), orderBy('createdAt', 'desc'));
@@ -72,7 +73,8 @@ const PostsManager = () => {
         slug: formData.slug,
         summary: formData.summary,
         content: formData.content,
-        tags: tagsArray
+        tags: tagsArray,
+        coverImage: formData.coverImage || ''
       };
 
       if (editingId) {
@@ -83,7 +85,7 @@ const PostsManager = () => {
       
       setShowForm(false);
       setEditingId(null);
-      setFormData({ title: '', slug: '', summary: '', content: '', tags: '' });
+      setFormData({ title: '', slug: '', summary: '', content: '', tags: '', coverImage: '' });
       toast.success('Lưu bài viết thành công!');
     } catch (error) {
       console.error(error);
@@ -94,7 +96,7 @@ const PostsManager = () => {
   const cancelForm = () => {
     setShowForm(false);
     setEditingId(null);
-    setFormData({ title: '', slug: '', summary: '', content: '', tags: '' });
+    setFormData({ title: '', slug: '', summary: '', content: '', tags: '', coverImage: '' });
   };
 
   return (
@@ -116,7 +118,10 @@ const PostsManager = () => {
             <input className="input-field" placeholder="Tiêu đề" required value={formData.title} onChange={e => setFormData({...formData, title: e.target.value})} />
             <input className="input-field" placeholder="Đường dẫn (VD: my-post-title)" required value={formData.slug} onChange={e => setFormData({...formData, slug: e.target.value})} />
           </div>
-          <input className="input-field" placeholder="Thẻ tag (cách nhau bởi dấu phẩy)" value={formData.tags as string} onChange={e => setFormData({...formData, tags: e.target.value})} />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <input className="input-field" placeholder="Thẻ tag (cách nhau bởi dấu phẩy)" value={formData.tags as string} onChange={e => setFormData({...formData, tags: e.target.value})} />
+            <input className="input-field" placeholder="URL Ảnh Bìa (Cover Image)" type="url" value={formData.coverImage || ''} onChange={e => setFormData({...formData, coverImage: e.target.value})} />
+          </div>
           <textarea className="input-field" placeholder="Tóm tắt" rows={2} required value={formData.summary} onChange={e => setFormData({...formData, summary: e.target.value})} />
           <textarea className="input-field font-mono text-sm" placeholder="Nội dung (Hỗ trợ Markdown)..." rows={10} required value={formData.content} onChange={e => setFormData({...formData, content: e.target.value})} />
           <button type="submit" className="btn-secondary w-full py-3 mt-4">{editingId ? 'Cập Nhật Bài Viết' : 'Xuất Bản Bài Viết'}</button>

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { collection, getDocs, query, orderBy } from 'firebase/firestore';
 import { db } from '../config/firebase';
+import { ScrollReveal } from '../components/common/ScrollReveal';
 
 interface Post {
   id: string;
@@ -10,6 +11,7 @@ interface Post {
   summary: string;
   createdAt: any;
   tags: string[];
+  coverImage?: string;
 }
 
 const BlogList = () => {
@@ -34,45 +36,151 @@ const BlogList = () => {
   }, []);
 
   if (loading) {
-    return <div className="py-32 text-center text-brand-500">Loading articles...</div>;
+    return (
+      <div className="max-w-7xl mx-auto px-6 pt-32 pb-20">
+        <div className="animate-pulse flex space-x-4">
+          <div className="flex-1 space-y-6 py-1">
+            <div className="h-2 bg-brand-100 rounded"></div>
+            <div className="space-y-3">
+              <div className="grid grid-cols-3 gap-4">
+                <div className="h-2 bg-brand-100 rounded col-span-2"></div>
+                <div className="h-2 bg-brand-100 rounded col-span-1"></div>
+              </div>
+              <div className="h-2 bg-brand-100 rounded"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
   }
 
-  return (
-    <div className="max-w-4xl mx-auto px-6 pt-32 pb-20">
-      <div className="mb-16 space-y-4">
-        <h1 className="text-4xl md:text-5xl font-bold text-brand-950">Insights & News</h1>
-        <p className="text-brand-500 text-lg">Thoughts on design, technology, and marketing.</p>
-      </div>
+  const featuredPost = posts[0];
+  const regularPosts = posts.slice(1);
 
-      <div className="space-y-12">
-        {posts.map(post => (
-          <article key={post.id} className="group cursor-pointer">
-            <Link key={post.id} to={`/blog/${post.slug}`} className="group block">
-              <article className="p-8 rounded-3xl bg-brand-50/50 border border-brand-100 hover:bg-white hover:shadow-xl hover:shadow-brand-900/5 transition-all duration-300">
-                <div className="flex gap-2 mb-4">
-                  {post.tags.map(tag => (
-                    <span key={tag} className="text-xs font-semibold uppercase tracking-wider text-brand-400 bg-brand-100/50 px-2 py-1 rounded-md">
-                      {tag}
+  return (
+    <div className="bg-brand-50 min-h-screen pb-24">
+      {/* HEADER SECTION */}
+      <section className="relative pt-32 pb-16 px-6 overflow-hidden">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-sky-400/10 rounded-full blur-[100px] pointer-events-none translate-x-1/3 -translate-y-1/2"></div>
+        <div className="max-w-7xl mx-auto relative z-10 text-center">
+          <ScrollReveal>
+            <div className="inline-block px-4 py-1.5 rounded-full bg-white text-brand-900 font-bold uppercase tracking-wider text-xs md:text-sm mb-6 border border-brand-200 shadow-sm">
+              Insights & News
+            </div>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-brand-950 tracking-tight mb-6">
+              Kiến Thức <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-600 to-lime-500">Thực Chiến</span>
+            </h1>
+            <p className="text-brand-500 text-lg md:text-xl max-w-2xl mx-auto font-light">
+              Những bài viết chuyên sâu về UI/UX, lập trình Frontend tối ưu hiệu suất, và nghệ thuật tăng trưởng doanh thu bằng Performance Ads.
+            </p>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      <div className="max-w-7xl mx-auto px-6">
+        {/* FEATURED POST */}
+        {featuredPost && (
+          <ScrollReveal delay={100} className="mb-16 md:mb-24">
+            <Link to={`/blog/${featuredPost.slug}`} className="group block relative bg-white rounded-[2rem] md:rounded-[3rem] border border-brand-100 p-4 md:p-6 overflow-hidden hover:shadow-2xl hover:shadow-brand-900/5 transition-all duration-500">
+              <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+                <div className="relative aspect-[4/3] md:aspect-square lg:aspect-[4/3] rounded-[1.5rem] md:rounded-[2rem] overflow-hidden bg-brand-50">
+                  <img 
+                    src={featuredPost.coverImage || 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop'} 
+                    alt={featuredPost.title} 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute top-4 left-4">
+                    <span className="px-3 py-1.5 bg-white/90 backdrop-blur-md text-brand-950 text-xs font-bold uppercase tracking-wider rounded-lg shadow-sm">
+                      Mới Nhất
                     </span>
-                  ))}
+                  </div>
                 </div>
-                <h2 className="text-2xl font-bold text-brand-950 mb-3 group-hover:text-brand-900 transition-colors">
-                  {post.title}
-                </h2>
-                <p className="text-brand-500 mb-6 leading-relaxed line-clamp-2">
-                  {post.summary}
-                </p>
-                <div className="flex items-center text-sm font-medium text-brand-400">
-                  <span>{post.createdAt?.toDate ? post.createdAt.toDate().toLocaleDateString() : new Date(post.createdAt).toLocaleDateString()}</span>
-                  <span className="mx-2">•</span>
-                  <span className="group-hover:translate-x-1 transition-transform inline-flex items-center gap-1 text-brand-900">
-                    Read article <span aria-hidden="true">&rarr;</span>
-                  </span>
+                
+                <div className="pr-4 md:pr-12 pb-8 md:pb-0">
+                  <div className="flex gap-2 mb-6 flex-wrap">
+                    {featuredPost.tags.map(tag => (
+                      <span key={tag} className="text-xs font-bold uppercase tracking-wider text-sky-600 bg-sky-50 px-3 py-1 rounded-full">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-brand-950 mb-6 leading-tight group-hover:text-sky-600 transition-colors">
+                    {featuredPost.title}
+                  </h2>
+                  <p className="text-brand-500 text-lg md:text-xl leading-relaxed mb-8 line-clamp-3 font-light">
+                    {featuredPost.summary}
+                  </p>
+                  
+                  <div className="flex items-center justify-between text-sm font-medium">
+                    <span className="text-brand-400 uppercase tracking-widest font-bold">
+                      {featuredPost.createdAt?.toDate ? featuredPost.createdAt.toDate().toLocaleDateString('vi-VN') : new Date(featuredPost.createdAt).toLocaleDateString('vi-VN')}
+                    </span>
+                    <span className="group-hover:translate-x-2 transition-transform inline-flex items-center gap-2 text-brand-950 font-bold bg-brand-50 px-4 py-2 rounded-xl group-hover:bg-brand-100">
+                      Đọc ngay <span aria-hidden="true">&rarr;</span>
+                    </span>
+                  </div>
                 </div>
-              </article>
+              </div>
             </Link>
-          </article>
-        ))}
+          </ScrollReveal>
+        )}
+
+        {/* REGULAR POSTS GRID */}
+        {regularPosts.length > 0 && (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {regularPosts.map((post, idx) => (
+              <ScrollReveal key={post.id} delay={idx * 100}>
+                <Link to={`/blog/${post.slug}`} className="group flex flex-col h-full bg-white rounded-3xl border border-brand-100 overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                  <div className="relative aspect-[16/10] overflow-hidden bg-brand-50">
+                    <img 
+                      src={post.coverImage || `https://source.unsplash.com/random/800x600?tech,${idx}`} 
+                      alt={post.title} 
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-brand-950/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </div>
+                  
+                  <div className="p-8 flex flex-col flex-grow">
+                    <div className="flex gap-2 mb-4 flex-wrap">
+                      {post.tags.map(tag => (
+                        <span key={tag} className="text-[10px] font-bold uppercase tracking-wider text-brand-500 bg-brand-50 border border-brand-100 px-2 py-1 rounded-md">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    
+                    <h3 className="text-xl md:text-2xl font-bold text-brand-950 mb-4 group-hover:text-sky-600 transition-colors leading-snug">
+                      {post.title}
+                    </h3>
+                    
+                    <p className="text-brand-500 mb-6 leading-relaxed line-clamp-3 text-sm md:text-base flex-grow">
+                      {post.summary}
+                    </p>
+                    
+                    <div className="flex items-center justify-between mt-auto pt-6 border-t border-brand-50">
+                      <span className="text-xs text-brand-400 font-bold tracking-wider">
+                        {post.createdAt?.toDate ? post.createdAt.toDate().toLocaleDateString('vi-VN') : new Date(post.createdAt).toLocaleDateString('vi-VN')}
+                      </span>
+                      <span className="group-hover:translate-x-1 transition-transform inline-flex items-center gap-1 text-sky-600 font-bold text-sm">
+                        Đọc tiếp <span aria-hidden="true">&rarr;</span>
+                      </span>
+                    </div>
+                  </div>
+                </Link>
+              </ScrollReveal>
+            ))}
+          </div>
+        )}
+
+        {posts.length === 0 && (
+          <div className="text-center py-20">
+            <div className="w-20 h-20 bg-brand-50 rounded-full flex items-center justify-center mx-auto mb-6">
+              <svg className="w-10 h-10 text-brand-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path></svg>
+            </div>
+            <h3 className="text-2xl font-bold text-brand-950 mb-2">Chưa có bài viết nào</h3>
+            <p className="text-brand-500">Các bài viết chia sẻ kiến thức sẽ sớm được cập nhật tại đây.</p>
+          </div>
+        )}
       </div>
     </div>
   );
