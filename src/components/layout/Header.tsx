@@ -8,7 +8,7 @@ import { db } from '../../config/firebase';
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { cart } = useCart();
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const location = useLocation();
   const [siteSettings, setSiteSettings] = useState<{siteName: string, logoUrl: string} | null>(null);
 
@@ -26,9 +26,7 @@ const Header = () => {
     return () => unsub();
   }, []);
 
-  const toggleLanguage = () => {
-    // Disabled as per user request
-  };
+
 
   const linkClass = ({ isActive }: { isActive: boolean }) => 
     `text-sm font-medium transition-colors ${isActive ? 'text-brand-900' : 'text-brand-500 hover:text-brand-900'}`;
