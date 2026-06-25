@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { db } from '../config/firebase';
 import { toast } from '../components/common/Toast';
@@ -9,7 +9,6 @@ import { useTranslation } from 'react-i18next';
 
 const Checkout = () => {
   const { cart, removeFromCart, clearCart } = useCart();
-  const navigate = useNavigate();
   const { t } = useTranslation();
   
   const [formData, setFormData] = useState({

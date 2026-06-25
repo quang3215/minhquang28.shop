@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { collection, query, where, getDocs, orderBy } from 'firebase/firestore';
+import { collection, query, where, getDocs } from 'firebase/firestore';
 import { db } from '../config/firebase';
 import { ScrollReveal } from '../components/common/ScrollReveal';
 import { useTranslation } from 'react-i18next';
@@ -123,7 +123,7 @@ const TrackOrder = () => {
             ) : (
               <div className="space-y-6">
                 <h2 className="text-xl font-bold text-brand-950 mb-4 px-2">{t('track_order.found', { count: orders.length })}</h2>
-                {orders.map((order, idx) => {
+                {orders.map((order) => {
                   const statusInfo = getStatusDisplay(order.status);
                   return (
                     <div key={order.id} className="bg-white p-6 md:p-8 rounded-3xl border border-brand-100 shadow-sm flex flex-col md:flex-row gap-6 items-start md:items-center">
@@ -135,8 +135,8 @@ const TrackOrder = () => {
                           <span className="text-xs font-mono bg-brand-50 text-brand-400 px-2 py-1 rounded-md">ID: #{order.id.slice(-6).toUpperCase()}</span>
                         </div>
                         <ul className="space-y-3">
-                          {order.items.map((item, i) => (
-                            <li key={i} className="flex gap-4 items-center">
+                          {(order.items || []).map((item) => (
+                            <li key={item.id || item.title} className="text-sm font-medium text-brand-950 flex items-center justify-between">
                               <div className="w-2 h-2 rounded-full bg-brand-300"></div>
                               <span className="font-bold text-brand-950">{item.title}</span>
                               <span className="text-sm text-brand-500">({item.price})</span>
