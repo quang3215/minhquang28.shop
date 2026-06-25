@@ -211,11 +211,14 @@ const Home = () => {
                         </span>
                       </div>
                     </div>
-                    <div className="p-6">
-                      <div className="flex justify-between items-start mb-2">
-                        <h3 className="text-xl font-bold text-brand-950">{p.title}</h3>
-                        <span className="text-lg font-black text-sky-600">{p.price}</span>
+                    <div className="p-6 flex flex-col flex-grow">
+                      <div className="flex justify-between items-start mb-3">
+                        <h3 className="text-xl font-bold text-brand-950 line-clamp-1">{p.title}</h3>
+                        <span className="text-lg font-black text-sky-600 shrink-0 ml-4">{p.price}</span>
                       </div>
+                      <p className="text-brand-500 text-sm line-clamp-2 leading-relaxed">
+                        {p.description}
+                      </p>
                     </div>
                   </div>
                 </ScrollReveal>

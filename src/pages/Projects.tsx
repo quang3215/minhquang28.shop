@@ -175,6 +175,12 @@ const Projects = () => {
                       </span>
                     </div>
                     
+                    <div className="mb-6 flex-grow">
+                      <p className="text-brand-500 text-sm md:text-base line-clamp-2 leading-relaxed">
+                        {project.description}
+                      </p>
+                    </div>
+                    
                     <div className="mt-auto pt-6 border-t border-brand-50 flex gap-3">
                       <button 
                         onClick={() => addToCart({ id: project.id, title: project.title, price: project.price, image: project.image })}
