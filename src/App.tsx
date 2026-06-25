@@ -5,6 +5,7 @@ import { ProtectedRoute } from './components/common/ProtectedRoute';
 import { CartProvider } from './components/context/CartContext';
 import { ToastContainer } from './components/common/Toast';
 import { ScrollToTop } from './components/common/ScrollToTop';
+import SeoHead from './components/common/SeoHead';
 
 import Home from './pages/Home';
 import Projects from './pages/Projects';
@@ -28,6 +29,7 @@ import AdminHomeSettings from './pages/admin/AdminHomeSettings';
 function App() {
   return (
     <CartProvider>
+      <SeoHead />
       <BrowserRouter basename="/minhquang28.shop/">
         <ScrollToTop />
         <Routes>

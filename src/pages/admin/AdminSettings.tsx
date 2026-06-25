@@ -12,6 +12,13 @@ interface SiteSettings {
   zalo: string;
   footerDescription: string;
   address: string;
+  // SEO & Tracking
+  metaTitle?: string;
+  metaDescription?: string;
+  metaKeywords?: string;
+  ogImage?: string;
+  trackingHeader?: string;
+  trackingBody?: string;
 }
 
 const defaultSettings: SiteSettings = {
@@ -22,7 +29,13 @@ const defaultSettings: SiteSettings = {
   facebook: 'https://www.facebook.com/minhquang28.ga/',
   zalo: '0865151136',
   footerDescription: 'MinhQuang28 chuyên cung cấp Source Code Website cao cấp và Giải pháp Quảng Cáo đa nền tảng tối ưu tỷ lệ chuyển đổi.',
-  address: 'Hà Nội, Việt Nam'
+  address: 'Hà Nội, Việt Nam',
+  metaTitle: 'Web Agency - Premium Templates & Services',
+  metaDescription: 'MinhQuang28 mang đến giải pháp Website High-end và Performance Ads giúp doanh nghiệp tự động hóa cỗ máy kiếm tiền.',
+  metaKeywords: 'Thiết kế website, Chạy quảng cáo, Performance Ads',
+  ogImage: '',
+  trackingHeader: '',
+  trackingBody: ''
 };
 
 const AdminSettings = () => {
@@ -131,6 +144,47 @@ const AdminSettings = () => {
                 onChange={e => setSettings({...settings, footerDescription: e.target.value})} 
                 required 
               />
+            </div>
+          </div>
+        </div>
+
+        {/* SEO Settings */}
+        <div>
+          <h2 className="text-lg font-bold text-brand-900 mb-4">Tối ưu SEO (Tìm kiếm)</h2>
+          <div className="space-y-4">
+            <div>
+              <label className="block text-xs font-bold text-brand-500 uppercase tracking-wider mb-2">Thẻ Tiêu đề (Meta Title)</label>
+              <input className="input-field" value={settings.metaTitle || ''} onChange={e => setSettings({...settings, metaTitle: e.target.value})} placeholder="VD: Công ty TNHH MinhQuang28" />
+            </div>
+            <div>
+              <label className="block text-xs font-bold text-brand-500 uppercase tracking-wider mb-2">Thẻ Mô tả (Meta Description)</label>
+              <textarea className="input-field" rows={2} value={settings.metaDescription || ''} onChange={e => setSettings({...settings, metaDescription: e.target.value})} />
+            </div>
+            <div>
+              <label className="block text-xs font-bold text-brand-500 uppercase tracking-wider mb-2">Từ khoá (Meta Keywords - Phân cách bằng dấu phẩy)</label>
+              <input className="input-field" value={settings.metaKeywords || ''} onChange={e => setSettings({...settings, metaKeywords: e.target.value})} />
+            </div>
+            <div>
+              <label className="block text-xs font-bold text-brand-500 uppercase tracking-wider mb-2">Ảnh chia sẻ Facebook/Zalo (OG Image URL)</label>
+              <input type="url" className="input-field" value={settings.ogImage || ''} onChange={e => setSettings({...settings, ogImage: e.target.value})} />
+            </div>
+          </div>
+        </div>
+
+        {/* Tracking Scripts */}
+        <div>
+          <h2 className="text-lg font-bold text-brand-900 mb-4">Mã Theo Dõi (Tracking Scripts)</h2>
+          <div className="p-4 bg-sky-50 text-sky-800 rounded-xl text-sm mb-4 border border-sky-100">
+            <strong>Lưu ý:</strong> Dán nguyên bản đoạn mã <code>&lt;script&gt;...&lt;/script&gt;</code> được cấp bởi Google Analytics, Facebook Pixel hoặc TikTok Pixel.
+          </div>
+          <div className="space-y-4">
+            <div>
+              <label className="block text-xs font-bold text-brand-500 uppercase tracking-wider mb-2">Mã chèn vào thẻ &lt;head&gt; (Khuyên dùng cho Meta Pixel, GA4, GTM)</label>
+              <textarea className="input-field font-mono text-xs" rows={4} value={settings.trackingHeader || ''} onChange={e => setSettings({...settings, trackingHeader: e.target.value})} placeholder="<script>...</script>" />
+            </div>
+            <div>
+              <label className="block text-xs font-bold text-brand-500 uppercase tracking-wider mb-2">Mã chèn vào thẻ &lt;body&gt; (Thường dùng cho GTM noscript hoặc Livechat)</label>
+              <textarea className="input-field font-mono text-xs" rows={4} value={settings.trackingBody || ''} onChange={e => setSettings({...settings, trackingBody: e.target.value})} placeholder="<noscript>...</noscript>" />
             </div>
           </div>
         </div>
