@@ -184,8 +184,8 @@ const AdsService = () => {
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-br from-purple-400 to-sky-400 rounded-[2.5rem] rotate-3 opacity-20 blur-xl"></div>
               <img 
-                src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1000&auto=format&fit=crop" 
-                alt="E-commerce Analytics" 
+                src="/images/ecommerce_ads_dashboard.png" 
+                alt="E-commerce Analytics Dashboard" 
                 loading="lazy"
                 className="relative z-10 rounded-[2.5rem] shadow-2xl border border-brand-100 object-cover aspect-square md:aspect-[4/3] w-full"
               />
