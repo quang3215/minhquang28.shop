@@ -6,8 +6,8 @@ const MainLayout = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      {/* pt-20 to offset the fixed header */}
-      <main className="flex-grow pt-20">
+      {/* Removed pt-20 so hero sections go under the translucent header */}
+      <main className="flex-grow">
         <Outlet />
       </main>
       <Footer />

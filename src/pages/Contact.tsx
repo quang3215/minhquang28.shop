@@ -52,7 +52,7 @@ const Contact = () => {
   return (
     <div className="pb-24 bg-brand-50 min-h-screen">
       {/* HERO LIÊN HỆ - LIGHT THEME */}
-      <section className="relative pt-12 pb-16 px-6 overflow-hidden">
+      <section className="relative pt-32 pb-16 px-6 overflow-hidden">
         {/* Background Effects */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-sky-900/10 via-brand-50 to-brand-50 pointer-events-none"></div>
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-sky-400/20 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
