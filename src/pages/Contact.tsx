@@ -50,7 +50,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="pt-24 pb-24 bg-brand-50 min-h-screen">
+    <div className="pb-24 bg-brand-50 min-h-screen">
       {/* HERO LIÊN HỆ - LIGHT THEME */}
       <section className="relative pt-12 pb-16 px-6 overflow-hidden">
         {/* Background Effects */}
