@@ -217,7 +217,7 @@ const Home = () => {
                         <span className="text-lg font-black text-sky-600 shrink-0 ml-4">{p.price}</span>
                       </div>
                       <p className="text-brand-500 text-sm line-clamp-2 leading-relaxed">
-                        {p.description}
+                        {p.description?.replace(/<[^>]*>?/gm, '')}
                       </p>
                     </div>
                   </div>

@@ -177,7 +177,7 @@ const Projects = () => {
                     
                     <div className="mb-6 flex-grow">
                       <p className="text-brand-500 text-sm md:text-base line-clamp-2 leading-relaxed">
-                        {project.description}
+                        {project.description?.replace(/<[^>]*>?/gm, '')}
                       </p>
                     </div>
                     
