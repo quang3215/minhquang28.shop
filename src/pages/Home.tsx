@@ -443,7 +443,7 @@ const Home = () => {
           <div className="relative z-10 space-y-6 md:space-y-8">
             <h2 className="text-4xl md:text-7xl font-black text-brand-950 tracking-tighter">Bạn đã sẵn sàng?</h2>
             <p className="text-brand-500 text-lg md:text-xl max-w-3xl mx-auto font-light leading-relaxed">
-              Bứt phá doanh thu ngay hôm nay với hệ sinh thái giải pháp toàn diện: <strong className="font-bold text-brand-900">Thiết kế Website High-end</strong>, <strong className="font-bold text-brand-900">Quảng cáo Performance (FB, Google, TikTok)</strong> và <strong className="font-bold text-brand-900">Tối ưu hóa E-Commerce</strong>.
+              Bứt phá doanh thu ngay hôm nay với hệ sinh thái giải pháp toàn diện: <strong className="font-bold text-brand-900">Phát triển Website High-end</strong>, <strong className="font-bold text-brand-900">Performance Marketing (FB, Google, TikTok, Shopee)</strong> và <strong className="font-bold text-brand-900">E-Commerce Growth</strong>.
             </p>
             <div className="pt-4 md:pt-8">
               <Link to="/contact" className="group inline-flex items-center justify-center gap-3 md:gap-4 w-full sm:w-auto bg-brand-900 text-white px-8 py-4 md:px-10 md:py-5 rounded-xl md:rounded-2xl font-black text-lg md:text-xl hover:scale-105 transition-all shadow-xl shadow-brand-900/20 hover:bg-brand-950">
