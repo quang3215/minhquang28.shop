@@ -131,7 +131,7 @@ const Home = () => {
                 <div>
                   <h3 className="text-3xl md:text-4xl font-black mb-4 md:mb-5 text-brand-950">Performance Marketing</h3>
                   <p className="text-brand-600 text-base md:text-lg leading-relaxed">
-                    Giải pháp quảng cáo đa kênh toàn diện (Google, Meta, TikTok) tập trung vào tối đa hóa tỷ suất hoàn vốn (ROAS). Ứng dụng Data-driven để liên tục tối ưu tệp khách hàng, tinh chỉnh thông điệp và giảm thiểu chi phí CPA, cam kết mang lại doanh thu thực tế.
+                    Giải pháp quảng cáo đa kênh toàn diện (Google, Meta, TikTok, Shopee) tập trung vào tối đa hóa tỷ suất hoàn vốn (ROAS). Ứng dụng Data-driven để liên tục tối ưu tệp khách hàng, tinh chỉnh thông điệp và giảm thiểu chi phí CPA, cam kết mang lại doanh thu thực tế.
                   </p>
                   <div className="mt-8 md:mt-10 inline-flex items-center gap-2 font-bold text-sky-600 group-hover:translate-x-2 transition-transform">
                     Chi tiết dịch vụ <span aria-hidden="true">&rarr;</span>
