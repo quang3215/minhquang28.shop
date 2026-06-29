@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { collection, getDocs, query, orderBy } from 'firebase/firestore';
 import { db } from '../config/firebase';
 import { ScrollReveal } from '../components/common/ScrollReveal';
+import blogHeroImage from '../assets/images/blog_hero.jpg';
 
 interface Post {
   id: string;
@@ -60,20 +61,44 @@ const BlogList = () => {
   return (
     <div className="bg-brand-50 min-h-screen pb-24">
       {/* HEADER SECTION */}
-      <section className="relative pt-32 pb-16 px-6 overflow-hidden">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-sky-400/10 rounded-full blur-[100px] pointer-events-none translate-x-1/3 -translate-y-1/2"></div>
-        <div className="max-w-7xl mx-auto relative z-10 text-center">
-          <ScrollReveal>
-            <div className="inline-block px-4 py-1.5 rounded-full bg-white text-brand-900 font-bold uppercase tracking-wider text-xs md:text-sm mb-6 border border-brand-200 shadow-sm">
-              Insights & News
-            </div>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-brand-950 tracking-tight mb-6">
-              Kiến Thức <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-600 to-lime-500">Thực Chiến</span>
-            </h1>
-            <p className="text-brand-500 text-lg md:text-xl max-w-2xl mx-auto font-light">
-              Những bài viết chuyên sâu về UI/UX, lập trình Frontend tối ưu hiệu suất, và nghệ thuật tăng trưởng doanh thu bằng Performance Ads.
-            </p>
-          </ScrollReveal>
+      <section className="relative pt-32 pb-16 md:pb-24 px-6 overflow-hidden">
+        {/* Background Effects */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-sky-900/10 via-brand-50 to-brand-50 pointer-events-none"></div>
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-sky-400/20 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-lime-400/20 rounded-full blur-[120px] translate-y-1/3 -translate-x-1/3 pointer-events-none"></div>
+        
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMSIgZmlsbD0icmdiYSgwLDAsMCwwLjAzKSIvPjwvc3ZnPg==')] opacity-50"></div>
+
+        <div className="max-w-7xl mx-auto w-full relative z-10 grid lg:grid-cols-2 gap-16 items-center">
+          <div className="order-2 lg:order-1">
+            <ScrollReveal>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/60 backdrop-blur-md text-brand-900 text-sm font-bold tracking-widest uppercase mb-6 border border-white shadow-sm">
+                <span className="w-2 h-2 rounded-full bg-sky-500 animate-pulse"></span>
+                Insights & News
+              </div>
+              <h1 className="text-4xl md:text-5xl lg:text-[4.5rem] font-black text-brand-950 tracking-tight mb-6 leading-[1.1]">
+                Kiến Thức <br className="hidden lg:block" />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-600 to-lime-500">Thực Chiến</span>
+              </h1>
+              <p className="text-brand-500 text-lg md:text-xl max-w-xl font-light leading-relaxed">
+                Những bài viết chuyên sâu về UI/UX, lập trình Frontend tối ưu hiệu suất, và nghệ thuật tăng trưởng doanh thu bằng Performance Ads.
+              </p>
+            </ScrollReveal>
+          </div>
+          
+          <div className="order-1 lg:order-2">
+            <ScrollReveal delay={200}>
+              <div className="relative rounded-[2.5rem] p-1 bg-gradient-to-tr from-sky-400/50 via-lime-400/30 to-brand-400/50 shadow-[0_0_80px_-20px_rgba(14,165,233,0.3)] group overflow-hidden">
+                <div className="absolute inset-0 bg-white rounded-[2.5rem] z-0"></div>
+                <img 
+                  src={blogHeroImage} 
+                  alt="Content Strategy and Marketing Insights" 
+                  loading="lazy"
+                  className="relative z-10 rounded-[2.4rem] w-full object-cover transform group-hover:scale-[1.02] transition-transform duration-700 aspect-video md:aspect-auto"
+                />
+              </div>
+            </ScrollReveal>
+          </div>
         </div>
       </section>
 

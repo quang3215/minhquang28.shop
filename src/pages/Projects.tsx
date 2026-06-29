@@ -5,6 +5,7 @@ import { db } from '../config/firebase';
 import { useCart } from '../components/context/CartContext';
 import { ScrollReveal } from '../components/common/ScrollReveal';
 import { useTranslation } from 'react-i18next';
+import projectsHeroImage from '../assets/images/projects_hero.jpg';
 
 interface Project {
   id: string;
@@ -67,18 +68,38 @@ const Projects = () => {
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-sky-400/20 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-lime-400/20 rounded-full blur-[120px] translate-y-1/3 -translate-x-1/3 pointer-events-none"></div>
         
-        <ScrollReveal className="relative z-10 max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/60 backdrop-blur-md text-brand-900 text-sm font-bold tracking-widest uppercase mb-8 border border-white shadow-sm">
-            <span className="w-2 h-2 rounded-full bg-sky-500 animate-pulse"></span>
-            Premium Selection
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMSIgZmlsbD0icmdiYSgwLDAsMCwwLjAzKSIvPjwvc3ZnPg==')] opacity-50"></div>
+
+        <div className="max-w-7xl mx-auto w-full relative z-10 grid lg:grid-cols-2 gap-16 items-center">
+          <div className="order-2 lg:order-1">
+            <ScrollReveal>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/60 backdrop-blur-md text-brand-900 text-sm font-bold tracking-widest uppercase mb-6 border border-white shadow-sm">
+                <span className="w-2 h-2 rounded-full bg-sky-500 animate-pulse"></span>
+                Premium Selection
+              </div>
+              <h1 className="text-4xl md:text-5xl lg:text-[4.5rem] font-black text-brand-950 mb-6 tracking-tight leading-[1.1]">
+                {t('projects.title')}
+              </h1>
+              <p className="text-lg md:text-xl text-brand-500 max-w-xl leading-relaxed mb-8">
+                {t('projects.subtitle')}
+              </p>
+            </ScrollReveal>
           </div>
-          <h1 className="text-5xl md:text-7xl font-black text-brand-950 mb-6 tracking-tight leading-[1.1]">
-            {t('projects.title')}
-          </h1>
-          <p className="text-xl text-brand-500 max-w-2xl mx-auto leading-relaxed">
-            {t('projects.subtitle')}
-          </p>
-        </ScrollReveal>
+          
+          <div className="order-1 lg:order-2">
+            <ScrollReveal delay={200}>
+              <div className="relative rounded-[2.5rem] p-1 bg-gradient-to-tr from-sky-400/50 via-lime-400/30 to-brand-400/50 shadow-[0_0_80px_-20px_rgba(14,165,233,0.3)] group overflow-hidden">
+                <div className="absolute inset-0 bg-white rounded-[2.5rem] z-0"></div>
+                <img 
+                  src={projectsHeroImage} 
+                  alt="Premium UI/UX Templates" 
+                  loading="lazy"
+                  className="relative z-10 rounded-[2.4rem] w-full object-cover transform group-hover:scale-[1.02] transition-transform duration-700 aspect-video md:aspect-auto"
+                />
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
       </section>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 pb-24 relative z-10 w-full">

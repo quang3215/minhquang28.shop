@@ -40,42 +40,62 @@ const Home = () => {
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-sky-400/20 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-lime-400/20 rounded-full blur-[120px] translate-y-1/3 -translate-x-1/3 pointer-events-none"></div>
 
-        <ScrollReveal className="max-w-6xl mx-auto text-center relative z-10 space-y-6 md:space-y-8">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 md:px-5 md:py-2 rounded-full bg-white/60 backdrop-blur-md text-brand-900 border border-white shadow-sm mb-2 md:mb-4">
-            <span className="w-2 h-2 rounded-full bg-sky-500 animate-pulse shadow-[0_0_10px_rgba(56,189,248,0.8)]"></span>
-            <span className="text-xs md:text-sm font-bold tracking-widest uppercase">Premium Digital Agency</span>
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMSIgZmlsbD0icmdiYSgwLDAsMCwwLjAzKSIvPjwvc3ZnPg==')] opacity-50"></div>
+
+        <div className="max-w-7xl mx-auto w-full relative z-10 grid lg:grid-cols-2 gap-16 items-center">
+          <div className="order-2 lg:order-1">
+            <ScrollReveal>
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 md:px-5 md:py-2 rounded-full bg-white/60 backdrop-blur-md text-brand-900 border border-white shadow-sm mb-6">
+                <span className="w-2 h-2 rounded-full bg-sky-500 animate-pulse shadow-[0_0_10px_rgba(56,189,248,0.8)]"></span>
+                <span className="text-xs md:text-sm font-bold tracking-widest uppercase">Premium Digital Agency</span>
+              </div>
+              
+              <h1 className="text-5xl md:text-6xl lg:text-[5.5rem] font-black tracking-tighter leading-[1.1] md:leading-[1.05] text-brand-950 mb-6">
+                {homeSettings?.heroTitle1 || 'Kiến Tạo Thương Hiệu'} <br className="hidden md:block" />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-600 to-lime-500">
+                  {homeSettings?.heroTitle2 || 'Đột Phá Doanh Thu'}
+                </span>
+              </h1>
+              
+              <p 
+                className="text-lg md:text-xl text-brand-500 leading-relaxed font-light mb-10"
+                dangerouslySetInnerHTML={{ __html: homeSettings?.heroDescription || 'MinhQuang28 mang đến giải pháp <strong class="text-brand-900 font-bold">Website High-end</strong> và <strong class="text-brand-900 font-bold">Performance Ads</strong> giúp doanh nghiệp tự động hóa cỗ máy kiếm tiền.' }}
+              />
+              
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link 
+                  to="/projects" 
+                  className="group relative w-full sm:w-auto inline-flex items-center justify-center bg-brand-900 text-white px-8 py-4 rounded-xl font-black text-lg transition-all shadow-xl shadow-brand-900/20 hover:bg-brand-950 hover:-translate-y-1"
+                >
+                  <span className="relative flex items-center gap-2">
+                    Khám Phá Giao Diện
+                    <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                  </span>
+                </Link>
+                <Link 
+                  to="/contact" 
+                  className="w-full sm:w-auto inline-flex items-center justify-center bg-white text-brand-900 px-8 py-4 rounded-xl font-bold text-lg border border-brand-200 hover:bg-brand-50 transition-colors shadow-sm"
+                >
+                  Liên Hệ Hợp Tác
+                </Link>
+              </div>
+            </ScrollReveal>
           </div>
           
-          <h1 className="text-brand-950 text-5xl md:text-8xl lg:text-[7rem] font-black tracking-tighter leading-[1.1] md:leading-[1.05]">
-            {homeSettings?.heroTitle1 || 'Kiến Tạo Thương Hiệu'} <br className="hidden md:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-600 to-lime-500">
-              {homeSettings?.heroTitle2 || 'Đột Phá Doanh Thu'}
-            </span>
-          </h1>
-          
-          <p 
-            className="text-lg md:text-2xl text-brand-500 max-w-3xl mx-auto leading-relaxed font-light mt-6 md:mt-8 px-2"
-            dangerouslySetInnerHTML={{ __html: homeSettings?.heroDescription || 'MinhQuang28 mang đến giải pháp <strong class="text-brand-900 font-bold">Website High-end</strong> và <strong class="text-brand-900 font-bold">Performance Ads</strong> giúp doanh nghiệp tự động hóa cỗ máy kiếm tiền.' }}
-          />
-          
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8 md:pt-10">
-            <Link 
-              to="/projects" 
-              className="group relative w-full sm:w-auto inline-flex items-center justify-center bg-brand-900 text-white px-8 py-4 md:py-5 rounded-2xl font-black text-base md:text-lg transition-all shadow-xl shadow-brand-900/20 hover:bg-brand-950 hover:-translate-y-1"
-            >
-              <span className="relative flex items-center gap-2">
-                Khám Phá Giao Diện
-                <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-              </span>
-            </Link>
-            <Link 
-              to="/contact" 
-              className="w-full sm:w-auto inline-flex items-center justify-center bg-white text-brand-900 px-8 py-4 md:py-5 rounded-2xl font-bold text-base md:text-lg border border-brand-200 hover:bg-brand-50 transition-colors shadow-sm"
-            >
-              Liên Hệ Nhận Báo Giá
-            </Link>
+          <div className="order-1 lg:order-2">
+            <ScrollReveal delay={200}>
+              <div className="relative rounded-[2.5rem] p-1 bg-gradient-to-tr from-sky-400/50 via-lime-400/30 to-brand-400/50 shadow-[0_0_80px_-20px_rgba(14,165,233,0.3)] group overflow-hidden">
+                <div className="absolute inset-0 bg-white rounded-[2.5rem] z-0"></div>
+                <img 
+                  src="/minhquang28.shop/images/home_hero.jpg" 
+                  alt="Premium Digital Agency Dashboard" 
+                  loading="lazy"
+                  className="relative z-10 rounded-[2.4rem] w-full object-cover transform group-hover:scale-[1.02] transition-transform duration-700 aspect-video md:aspect-auto"
+                />
+              </div>
+            </ScrollReveal>
           </div>
-        </ScrollReveal>
+        </div>
       </section>
 
       {/* INFINITE MARQUEE */}
