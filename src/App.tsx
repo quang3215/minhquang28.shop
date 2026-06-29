@@ -13,6 +13,7 @@ import ProjectDetail from './pages/ProjectDetail';
 import Checkout from './pages/Checkout';
 import TrackOrder from './pages/TrackOrder';
 import AdsService from './pages/AdsService';
+import ClickGuardService from './pages/ClickGuardService';
 import BlogList from './pages/BlogList';
 import BlogDetail from './pages/BlogDetail';
 import Contact from './pages/Contact';
@@ -42,6 +43,7 @@ function App() {
             <Route path="cart" element={<Checkout />} />
             <Route path="track-order" element={<TrackOrder />} />
             <Route path="services/ads" element={<AdsService />} /> 
+            <Route path="services/clickguard" element={<ClickGuardService />} />
             <Route path="blog" element={<BlogList />} />
             <Route path="blog/:slug" element={<BlogDetail />} />
             <Route path="contact" element={<Contact />} />

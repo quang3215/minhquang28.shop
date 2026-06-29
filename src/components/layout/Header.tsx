@@ -52,6 +52,7 @@ const Header = () => {
           <nav className="hidden md:flex items-center gap-8">
             <NavLink to="/projects" className={linkClass}>{t('header.templates')}</NavLink>
             <NavLink to="/services/ads" className={linkClass}>{t('header.services')}</NavLink>
+            <NavLink to="/services/clickguard" className={linkClass}>Chống Click Tặc</NavLink>
             <NavLink to="/blog" className={linkClass}>{t('header.blog')}</NavLink>
             
             <div className="flex items-center gap-2">
@@ -107,6 +108,7 @@ const Header = () => {
             <NavLink to="/" onClick={() => setIsMobileMenuOpen(false)} className={mobileLinkClass}>Trang Chủ</NavLink>
             <NavLink to="/projects" onClick={() => setIsMobileMenuOpen(false)} className={mobileLinkClass}>Kho Giao Diện (Templates)</NavLink>
             <NavLink to="/services/ads" onClick={() => setIsMobileMenuOpen(false)} className={mobileLinkClass}>Dịch Vụ Quảng Cáo</NavLink>
+            <NavLink to="/services/clickguard" onClick={() => setIsMobileMenuOpen(false)} className={mobileLinkClass}>Hệ Thống ClickGuard</NavLink>
             <NavLink to="/blog" onClick={() => setIsMobileMenuOpen(false)} className={mobileLinkClass}>Blog Chia Sẻ</NavLink>
           </nav>
           

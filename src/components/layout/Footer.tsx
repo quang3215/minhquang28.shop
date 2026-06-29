@@ -55,6 +55,7 @@ const Footer = () => {
           <ul className="space-y-4 font-medium text-brand-600">
             <li><Link to="/projects" className="hover:text-sky-600 transition-colors inline-block hover:translate-x-1 transform duration-300">Kho Giao Diện</Link></li>
             <li><Link to="/services/ads" className="hover:text-lime-600 transition-colors inline-block hover:translate-x-1 transform duration-300">Dịch Vụ Quảng Cáo</Link></li>
+            <li><Link to="/services/clickguard" className="hover:text-sky-600 transition-colors inline-block hover:translate-x-1 transform duration-300">Hệ Thống ClickGuard</Link></li>
             <li><Link to="/blog" className="hover:text-sky-600 transition-colors inline-block hover:translate-x-1 transform duration-300">Blog Chia Sẻ</Link></li>
             <li><Link to="/contact" className="hover:text-sky-600 transition-colors inline-block hover:translate-x-1 transform duration-300">Liên Hệ</Link></li>
           </ul>
