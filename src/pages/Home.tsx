@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { collection, getDocs, getDoc, doc, query, orderBy, limit } from 'firebase/firestore';
 import { db } from '../config/firebase';
 import { ScrollReveal } from '../components/common/ScrollReveal';
+import homeHeroImage from '../assets/images/home_hero.jpg';
 
 const Home = () => {
   const [featuredProjects, setFeaturedProjects] = useState<any[]>([]);
@@ -87,7 +88,7 @@ const Home = () => {
               <div className="relative rounded-[2.5rem] p-1 bg-gradient-to-tr from-sky-400/50 via-lime-400/30 to-brand-400/50 shadow-[0_0_80px_-20px_rgba(14,165,233,0.3)] group overflow-hidden">
                 <div className="absolute inset-0 bg-white rounded-[2.5rem] z-0"></div>
                 <img 
-                  src="/minhquang28.shop/images/home_hero.jpg" 
+                  src={homeHeroImage} 
                   alt="Premium Digital Agency Dashboard" 
                   loading="lazy"
                   className="relative z-10 rounded-[2.4rem] w-full object-cover transform group-hover:scale-[1.02] transition-transform duration-700 aspect-video md:aspect-auto"
